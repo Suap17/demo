@@ -183,6 +183,7 @@ view: delivery_performance_supplier_360_transactions {
   dimension: latest_shipment {
     type: number
     sql: ${TABLE}.Latest_shipment ;;
+    value_format: "0 \" Day(s)\""
   }
 
   dimension: latest_shipment_color_coding {
