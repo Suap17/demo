@@ -180,7 +180,7 @@ view: delivery_performance_supplier_360_transactions {
     sql: ${TABLE}.Late_SQCs_Weightage ;;
   }
 
-  dimension: latest_shipment {
+  dimension: latest_shipment1 {
     type: number
     sql: ${TABLE}.Latest_shipment ;;
     value_format: "0 \" Day(s)\""
