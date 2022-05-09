@@ -312,6 +312,11 @@ view: delivery_performance_supplier_360_transactions {
     sql: ${TABLE}.Shipped_date ;;
   }
 
+  dimension: Delivered_Date {
+    type: date
+    sql: CAST(${TABLE}.shipped_date as date) ;;
+  }
+
   dimension: supplier {
     type: string
     sql: ${TABLE}.Supplier ;;
