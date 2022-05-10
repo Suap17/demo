@@ -227,6 +227,21 @@ view: delivery_performance_supplier_360_transactions {
     sql: ${TABLE}.Ordered_Date ;;
   }
 
+  dimension_group: order_date_calculation {
+    type: time
+    timeframes: [month_name, day_of_month]
+    sql: parse_date('%m%d%Y', ${TABLE}.Order_Date) ;;
+  }
+
+  dimension: order_date_formatt {
+    sql: concat(substring(${order_date_calculation_month_name},1,3),' ',${order_date_calculation_day_of_month});;
+  }
+
+  dimension: order_date_actual2 {
+    type: date
+    sql:parse_date('%m/%d/%Y',${TABLE}.Ordered_date) ;;
+  }
+
   dimension: out_of_cost {
     type: number
     sql: ${TABLE}.Out_of_Cost ;;
