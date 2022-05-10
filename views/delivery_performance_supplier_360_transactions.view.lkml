@@ -242,6 +242,12 @@ view: delivery_performance_supplier_360_transactions {
     sql:parse_date('%m/%d/%Y',${TABLE}.Ordered_date) ;;
   }
 
+  dimension_group: shipped_date_calculation {
+    type: time
+    timeframes: [month_name, day_of_month, year]
+    sql: parse_date('%m%d%Y', ${shipped_date} ;;
+  }
+
   dimension: out_of_cost {
     type: number
     sql: ${TABLE}.Out_of_Cost ;;
